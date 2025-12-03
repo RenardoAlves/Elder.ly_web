@@ -22,7 +22,7 @@ const BuscarCuidador = () => {
     {
       id: 1,
       nome: "Maria Silva",
-      foto: "https://i.pravatar.cc/150?img=1",
+      foto: "https://i.pravatar.cc/150?img=35",
       avaliacao: 4.9,
       avaliacoes: 127,
       experiencia: "5 anos",
@@ -34,7 +34,7 @@ const BuscarCuidador = () => {
     {
       id: 2,
       nome: "João Oliveira",
-      foto: "https://i.pravatar.cc/150?img=2",
+      foto: "https://i.pravatar.cc/150?img=13",
       avaliacao: 4.8,
       avaliacoes: 98,
       experiencia: "7 anos",
