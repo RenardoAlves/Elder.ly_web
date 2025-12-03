@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 40 35% 98%;
+    --foreground: 195 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 195 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 195 30% 15%;
+
+    --primary: 175 60% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 85% 65%;
+    --secondary-foreground: 195 30% 15%;
+
+    --muted: 40 20% 95%;
+    --muted-foreground: 195 15% 45%;
+
+    --accent: 25 85% 65%;
+    --accent-foreground: 195 30% 15%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 175 60% 35%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 175 45% 96%;
+    --sidebar-foreground: 195 30% 15%;
+    --sidebar-primary: 175 60% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 35% 98%;
+    --sidebar-accent-foreground: 195 30% 15%;
+    --sidebar-border: 40 15% 88%;
+    --sidebar-ring: 175 60% 35%;
+
+    /* Custom Colors */
+    --trust: 175 60% 35%;
+    --trust-foreground: 0 0% 100%;
+    --warm: 25 85% 65%;
+    --warm-foreground: 195 30% 15%;
+    --success: 145 65% 45%;
+    --success-foreground: 0 0% 100%;
+    --info: 210 80% 55%;
+    --info-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(175 60% 35%), hsl(175 60% 45%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 85% 65%), hsl(25 85% 75%));
+    --gradient-subtle: linear-gradient(180deg, hsl(40 35% 98%), hsl(40 25% 96%));
+
+    /* Shadows */
+    --shadow-card: 0 2px 8px hsl(195 30% 15% / 0.08);
+    --shadow-elevated: 0 8px 24px hsl(195 30% 15% / 0.12);
+    --shadow-glow: 0 0 30px hsl(175 60% 35% / 0.2);
+
+    /* Transitions */
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 195 40% 8%;
+    --foreground: 40 30% 95%;
+
+    --card: 195 35% 12%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 195 35% 12%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 175 60% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 75% 55%;
+    --secondary-foreground: 195 30% 15%;
+
+    --muted: 195 30% 18%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 25 75% 55%;
+    --accent-foreground: 195 30% 15%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 195 25% 22%;
+    --input: 195 25% 22%;
+    --ring: 175 60% 45%;
+
+    --sidebar-background: 195 40% 10%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 175 60% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 30% 18%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 195 25% 22%;
+    --sidebar-ring: 175 60% 45%;
+
+    --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 8px 24px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(175 60% 45% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
