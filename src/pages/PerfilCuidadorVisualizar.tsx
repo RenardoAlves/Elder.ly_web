@@ -66,7 +66,7 @@ const PerfilCuidadorVisualizar = () => {
             <h1 className="font-display font-bold text-xl text-foreground">Meu Perfil</h1>
           </div>
           
-          <Link to="/perfil-cuidador">
+          <Link to="/perfil-cuidador/editar">
             <Button className="bg-primary hover:bg-primary/90">
               <Edit className="h-4 w-4 mr-2" /> Editar Perfil
             </Button>
@@ -242,7 +242,7 @@ const PerfilCuidadorVisualizar = () => {
 
           {/* Botão de Editar */}
           <div className="flex justify-center pb-8">
-            <Link to="/perfil-cuidador">
+            <Link to="/perfil-cuidador/editar">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
                 <Edit className="h-4 w-4 mr-2" /> Editar Perfil
               </Button>

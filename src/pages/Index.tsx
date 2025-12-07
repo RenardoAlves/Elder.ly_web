@@ -160,7 +160,7 @@ const Index = () => {
               <div className="space-y-4">
                 <div className="bg-card p-6 rounded-2xl shadow-card">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10" />
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200" alt="Maria Silva" className="w-12 h-12 rounded-full" />
                     <div>
                       <div className="font-semibold">Maria Silva</div>
                       <div className="text-sm text-muted-foreground">5 anos de experiência</div>
