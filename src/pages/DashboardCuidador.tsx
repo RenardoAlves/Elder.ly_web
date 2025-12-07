@@ -156,10 +156,15 @@ const DashboardCuidador = () => {
 
                 <div className="text-right">
                   <p className="text-sm text-muted-foreground mb-1">Perfil completo</p>
-                  <Progress value={85} className="w-32 h-2 mb-2" />
-                  <Link to="/perfil-cuidador">
-                    <Button variant="outline" size="sm">Editar Perfil</Button>
-                  </Link>
+                  <Progress value={85} className="w-32 h-2 mb-2 ml-auto" />
+                  <div className="flex gap-2">
+                    <Link to="/perfil-cuidador/ver">
+                      <Button variant="outline" size="sm">Ver Perfil</Button>
+                    </Link>
+                    <Link to="/perfil-cuidador">
+                      <Button variant="outline" size="sm">Editar Perfil</Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </CardContent>

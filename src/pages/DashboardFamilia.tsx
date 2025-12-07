@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Search, Calendar, Clock, User, Bell, Settings, LogOut, Star, MapPin } from "lucide-react";
+import { Heart, Search, Calendar, Clock, User, Bell, Settings, LogOut, Star, MapPin, CreditCard, HelpCircle, Moon, UserCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const DashboardFamilia = () => {
   return (
@@ -18,12 +26,75 @@ const DashboardFamilia = () => {
               </span>
             </Link>
             <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" title="Notificações">
-                <Bell className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" title="Configurações">
-                <Settings className="h-5 w-5" />
-              </Button>
+              {/* Dropdown Notificações */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" title="Notificações" className="relative">
+                    <Bell className="h-5 w-5" />
+                    <span className="absolute -top-1 -right-1 h-4 w-4 bg-destructive text-destructive-foreground text-xs rounded-full flex items-center justify-center">
+                      3
+                    </span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-80">
+                  <DropdownMenuLabel>Notificações</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-medium">Nova proposta de cuidador</span>
+                    <span className="text-xs text-muted-foreground">Maria Silva respondeu sua solicitação</span>
+                    <span className="text-xs text-muted-foreground">Há 5 minutos</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-medium">Agendamento confirmado</span>
+                    <span className="text-xs text-muted-foreground">Plantão de amanhã foi confirmado</span>
+                    <span className="text-xs text-muted-foreground">Há 1 hora</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-medium">Lembrete de medicação</span>
+                    <span className="text-xs text-muted-foreground">José Santos - Donepezila às 20h</span>
+                    <span className="text-xs text-muted-foreground">Há 2 horas</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="text-center text-primary cursor-pointer">
+                    Ver todas as notificações
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              {/* Dropdown Configurações */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" title="Configurações">
+                    <Settings className="h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  <DropdownMenuLabel>Configurações</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <UserCircle className="h-4 w-4" />
+                    Meu Perfil
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <CreditCard className="h-4 w-4" />
+                    Pagamentos
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <Bell className="h-4 w-4" />
+                    Preferências de Notificação
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <Moon className="h-4 w-4" />
+                    Tema Escuro
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <HelpCircle className="h-4 w-4" />
+                    Ajuda e Suporte
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               <Link to="/login">
                 <Button variant="ghost" size="icon" title="Sair">
                   <LogOut className="h-5 w-5" />
@@ -165,11 +236,54 @@ const DashboardFamilia = () => {
                 <CardTitle>Solicitações Pendentes</CardTitle>
                 <CardDescription>Aguardando resposta dos cuidadores</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="p-8 text-center text-muted-foreground">
-                  <Calendar className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                  <p>Nenhuma solicitação pendente no momento</p>
-                </div>
+              <CardContent className="space-y-4">
+                {[
+                  {
+                    cuidador: "Carla Mendes",
+                    data: "Segunda, 10:00",
+                    idoso: "José Santos",
+                    tipo: "Plantão 8h",
+                    status: "aguardando",
+                    tempo: "Enviado há 2 horas"
+                  },
+                  {
+                    cuidador: "Ricardo Lima",
+                    data: "Terça, 14:00",
+                    idoso: "Ana Maria",
+                    tipo: "Plantão 12h",
+                    status: "aguardando",
+                    tempo: "Enviado há 5 horas"
+                  },
+                  {
+                    cuidador: "Fernanda Costa",
+                    data: "Quarta, 08:00",
+                    idoso: "José Santos",
+                    tipo: "Plantão 24h",
+                    status: "aguardando",
+                    tempo: "Enviado ontem"
+                  }
+                ].map((solicitacao, index) => (
+                  <div key={index} className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-warning/10 flex items-center justify-center">
+                        <Clock className="h-6 w-6 text-warning" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">{solicitacao.cuidador}</h4>
+                        <p className="text-sm text-muted-foreground">{solicitacao.data}</p>
+                        <p className="text-xs text-muted-foreground">
+                          Para: {solicitacao.idoso} • {solicitacao.tipo}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <Badge variant="outline" className="bg-warning/10 text-warning border-warning/20">
+                        Aguardando
+                      </Badge>
+                      <p className="text-xs text-muted-foreground mt-1">{solicitacao.tempo}</p>
+                    </div>
+                  </div>
+                ))}
               </CardContent>
             </Card>
           </div>
@@ -184,25 +298,29 @@ const DashboardFamilia = () => {
               </CardHeader>
               <CardContent className="space-y-3">
                 {[
-                  { nome: "José Santos", idade: 78, necessidades: "Alzheimer" },
-                  { nome: "Ana Maria", idade: 82, necessidades: "Mobilidade reduzida" }
-                ].map((idoso, index) => (
-                  <div key={index} className="p-3 border rounded-lg">
+                  { id: "1", nome: "José Santos", idade: 78, necessidades: "Alzheimer" },
+                  { id: "2", nome: "Ana Maria", idade: 82, necessidades: "Mobilidade reduzida" }
+                ].map((idoso) => (
+                  <div key={idoso.id} className="p-3 border rounded-lg">
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h4 className="font-semibold">{idoso.nome}</h4>
                         <p className="text-xs text-muted-foreground">{idoso.idade} anos</p>
                       </div>
-                      <Button variant="ghost" size="sm">
-                        Editar
-                      </Button>
+                      <Link to={`/editar-idoso?id=${idoso.id}`}>
+                        <Button variant="ghost" size="sm">
+                          Editar
+                        </Button>
+                      </Link>
                     </div>
                     <p className="text-xs text-muted-foreground">{idoso.necessidades}</p>
                   </div>
                 ))}
-                <Button variant="outline" className="w-full">
-                  + Adicionar Novo Perfil
-                </Button>
+                <Link to="/novo-idoso" className="mt-4 block">
+                  <Button variant="outline" className="w-full">
+                    + Adicionar Novo Perfil
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 

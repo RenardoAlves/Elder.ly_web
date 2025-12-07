@@ -41,7 +41,7 @@ const MeusIdosos = () => {
     },
     {
       id: 2,
-      nome: "Maria Santos",
+      nome: "Ana Maria",
       idade: 75,
       parentesco: "Mãe",
       condicoes: ["Alzheimer inicial"],
