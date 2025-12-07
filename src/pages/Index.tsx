@@ -27,15 +27,6 @@ const Index = () => {
               </span>
             </div>
             <nav className="hidden md:flex items-center gap-6">
-              <a href="#como-funciona" className="text-sm font-medium hover:text-primary transition-colors">
-                Como Funciona
-              </a>
-              <a href="#para-familias" className="text-sm font-medium hover:text-primary transition-colors">
-                Para Famílias
-              </a>
-              <a href="#para-cuidadores" className="text-sm font-medium hover:text-primary transition-colors">
-                Para Cuidadores
-              </a>
               <Link to="/login">
                 <Button variant="ghost">Entrar</Button>
               </Link>
