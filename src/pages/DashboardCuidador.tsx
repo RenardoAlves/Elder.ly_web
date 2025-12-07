@@ -161,7 +161,7 @@ const DashboardCuidador = () => {
                     <Link to="/perfil-cuidador/ver">
                       <Button variant="outline" size="sm">Ver Perfil</Button>
                     </Link>
-                    <Link to="/perfil-cuidador">
+                    <Link to="/perfil-cuidador/editar">
                       <Button variant="outline" size="sm">Editar Perfil</Button>
                     </Link>
                   </div>

@@ -12,6 +12,7 @@ import PerfilCuidadorEditar from "./pages/PerfilCuidadorEditar";
 import Historico from "./pages/Historico";
 import MeusIdosos from "./pages/MeusIdosos";
 import NotFound from "./pages/NotFound";
+import PerfilCuidadorVisualizar from "./pages/PerfilCuidadorVisualizar";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,8 @@ const App = () => (
           <Route path="/dashboard/familia" element={<DashboardFamilia />} />
           <Route path="/dashboard/cuidador" element={<DashboardCuidador />} />
           <Route path="/buscar-cuidador" element={<BuscarCuidador />} />
-          <Route path="/perfil-cuidador" element={<PerfilCuidadorEditar />} />
+          <Route path="/perfil-cuidador/editar" element={<PerfilCuidadorEditar />} />
+          <Route path="/perfil-cuidador/ver" element={<PerfilCuidadorVisualizar />} />
           <Route path="/historico" element={<Historico />} />
           <Route path="/meus-idosos" element={<MeusIdosos />} />
           <Route path="*" element={<NotFound />} />
