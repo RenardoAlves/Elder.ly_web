@@ -71,19 +71,19 @@ const DashboardFamilia = () => {
                 <DropdownMenuContent align="end" className="w-56">
                   <DropdownMenuLabel>Configurações</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <Link to="/familia/perfil">
+                  <Link to="/perfil-familia" relative="route">
                     <DropdownMenuItem className="cursor-pointer gap-2">
                       <UserCircle className="h-4 w-4" />
                       Meu Perfil
                     </DropdownMenuItem>
                   </Link>
-                  <Link to="/familia/pagamentos">
+                  <Link to="/pagamentos" relative="route">
                     <DropdownMenuItem className="cursor-pointer gap-2">
                       <CreditCard className="h-4 w-4" />
                       Pagamentos
                     </DropdownMenuItem>
                   </Link>
-                  <Link to="/familia/notificacoes">
+                  <Link to="/notificacoes-familia" relative="route">
                     <DropdownMenuItem className="cursor-pointer gap-2">
                       <Bell className="h-4 w-4" />
                       Preferências de Notificação
@@ -156,7 +156,7 @@ const DashboardFamilia = () => {
           </Card>
         </Link>
 
-        <Link to="/familia/agendamentos" className="block">
+        <Link to="/agendamentos" relative="route" className="block">
           <Card className="hover:shadow-elevated transition-shadow cursor-pointer h-full">
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center gap-2">

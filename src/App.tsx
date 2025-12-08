@@ -29,10 +29,10 @@ const App = () => (
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard/familia" element={<DashboardFamilia />} />
-          <Route path="/familia/agendamentos" element={<Agendamentos />} />
-          <Route path="/familia/perfil" element={<PerfilFamilia />} />
-          <Route path="/familia/pagamentos" element={<Pagamentos />} />
-          <Route path="/familia/notificacoes" element={<NotificacoesFamilia />} />
+          <Route path="/agendamentos" element={<Agendamentos />} />
+          <Route path="/perfil-familia" element={<PerfilFamilia />} />
+          <Route path="/pagamentos" element={<Pagamentos />} />
+          <Route path="/notificacoes-familia" element={<NotificacoesFamilia />} />
           <Route path="/dashboard/cuidador" element={<DashboardCuidador />} />
           <Route path="/buscar-cuidador" element={<BuscarCuidador />} />
           <Route path="/perfil-cuidador/editar" element={<PerfilCuidadorEditar />} />
