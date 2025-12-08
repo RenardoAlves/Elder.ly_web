@@ -31,23 +31,23 @@ const Pagamentos = () => {
   const historico = [
     {
       id: "1",
-      descricao: "Plantão 12h - Maria Silva",
-      data: "05/12/2024",
-      valor: "R$ 420,00",
+      descricao: "Acompanhamento 10h - Maria Silva",
+      data: "15/11/2024",
+      valor: "R$ 200,00",
       status: "pago"
     },
     {
       id: "2",
-      descricao: "Plantão 24h - João Oliveira",
-      data: "01/12/2024",
-      valor: "R$ 780,00",
+      descricao: "Acompanhamento 8h - João Oliveira",
+      data: "10/11/2024",
+      valor: "R$ 180,00",
       status: "pago"
     },
     {
       id: "3",
-      descricao: "Plantão 8h - Carla Mendes",
-      data: "28/11/2024",
-      valor: "R$ 280,00",
+      descricao: "Acompanhamento 8h - Carla Mendes",
+      data: "01/11/2024",
+      valor: "R$ 160,00",
       status: "pago"
     }
   ];
