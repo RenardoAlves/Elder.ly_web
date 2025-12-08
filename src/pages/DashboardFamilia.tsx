@@ -71,18 +71,24 @@ const DashboardFamilia = () => {
                 <DropdownMenuContent align="end" className="w-56">
                   <DropdownMenuLabel>Configurações</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem className="cursor-pointer gap-2">
-                    <UserCircle className="h-4 w-4" />
-                    Meu Perfil
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer gap-2">
-                    <CreditCard className="h-4 w-4" />
-                    Pagamentos
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer gap-2">
-                    <Bell className="h-4 w-4" />
-                    Preferências de Notificação
-                  </DropdownMenuItem>
+                  <Link to="/perfil">
+                    <DropdownMenuItem className="cursor-pointer gap-2">
+                      <UserCircle className="h-4 w-4" />
+                      Meu Perfil
+                    </DropdownMenuItem>
+                  </Link>
+                  <Link to="/pagamentos">
+                    <DropdownMenuItem className="cursor-pointer gap-2">
+                      <CreditCard className="h-4 w-4" />
+                      Pagamentos
+                    </DropdownMenuItem>
+                  </Link>
+                  <Link to="/notificacoes">
+                    <DropdownMenuItem className="cursor-pointer gap-2">
+                      <Bell className="h-4 w-4" />
+                      Preferências de Notificação
+                    </DropdownMenuItem>
+                  </Link>
                   <DropdownMenuItem className="cursor-pointer gap-2">
                     <Moon className="h-4 w-4" />
                     Tema Escuro

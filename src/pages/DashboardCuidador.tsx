@@ -6,7 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
+import {
+  UserCircle,
+  Moon,
+  HelpCircle,
+  CreditCard,
+  Heart,
   Calendar, 
   Clock, 
   DollarSign, 
@@ -24,6 +29,14 @@ import {
   Users
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const DashboardCuidador = () => {
   const { toast } = useToast();
@@ -95,30 +108,91 @@ const DashboardCuidador = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">E+</span>
-            </div>
-            <span className="font-display font-bold text-xl text-foreground">Elder.ly+</span>
-          </Link>
-          
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" className="relative">
-              <Bell className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-warm text-warm-foreground text-xs rounded-full flex items-center justify-center">
-                {solicitacoes.length}
+      <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="flex items-center gap-2">
+              <Heart className="h-8 w-8 text-primary fill-primary" />
+              <span className="text-2xl font-display font-bold text-primary">
+                Elder.ly+
               </span>
-            </Button>
-            <Button variant="ghost" size="icon">
-              <Settings className="h-5 w-5" />
-            </Button>
-            <Link to="/login">
-              <Button variant="ghost" size="icon">
-                <LogOut className="h-5 w-5" />
-              </Button>
             </Link>
+            <div className="flex items-center gap-2">
+              {/* Dropdown Notificações */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" title="Notificações" className="relative">
+                    <Bell className="h-5 w-5" />
+                    <span className="absolute -top-1 -right-1 h-4 w-4 bg-destructive text-destructive-foreground text-xs rounded-full flex items-center justify-center">
+                      3
+                    </span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-80">
+                  <DropdownMenuLabel>Notificações</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-medium">Nova proposta de cuidador</span>
+                    <span className="text-xs text-muted-foreground">Maria Silva respondeu sua solicitação</span>
+                    <span className="text-xs text-muted-foreground">Há 5 minutos</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-medium">Agendamento confirmado</span>
+                    <span className="text-xs text-muted-foreground">Plantão de amanhã foi confirmado</span>
+                    <span className="text-xs text-muted-foreground">Há 1 hora</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-medium">Lembrete de medicação</span>
+                    <span className="text-xs text-muted-foreground">José Santos - Donepezila às 20h</span>
+                    <span className="text-xs text-muted-foreground">Há 2 horas</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="text-center text-primary cursor-pointer">
+                    Ver todas as notificações
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              {/* Dropdown Configurações */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" title="Configurações">
+                    <Settings className="h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  <DropdownMenuLabel>Configurações</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <UserCircle className="h-4 w-4" />
+                    Meu Perfil
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <CreditCard className="h-4 w-4" />
+                    Pagamentos
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <Bell className="h-4 w-4" />
+                    Preferências de Notificação
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <Moon className="h-4 w-4" />
+                    Tema Escuro
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="cursor-pointer gap-2">
+                    <HelpCircle className="h-4 w-4" />
+                    Ajuda e Suporte
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Link to="/login">
+                <Button variant="ghost" size="icon" title="Sair">
+                  <LogOut className="h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </header>

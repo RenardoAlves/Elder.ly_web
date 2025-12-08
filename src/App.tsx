@@ -13,6 +13,10 @@ import Historico from "./pages/Historico";
 import MeusIdosos from "./pages/MeusIdosos";
 import NotFound from "./pages/NotFound";
 import PerfilCuidadorVisualizar from "./pages/PerfilCuidadorVisualizar";
+import PerfilFamilia from "./pages/PerfilFamilia";
+import Pagamentos from "./pages/Pagamentos";
+import NotificacoesFamilia from "./pages/ConfNotificacaoFamilia";
+import Agendamentos from "./pages/Agendamentos";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +29,10 @@ const App = () => (
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard/familia" element={<DashboardFamilia />} />
+          <Route path="/dashboard/familia/agendamentos" element={<Agendamentos />} />
+          <Route path="/dashboard/familia/perfil" element={<PerfilFamilia />} />
+          <Route path="/dashboard/familia/pagamentos" element={<Pagamentos />} />
+          <Route path="/dashboard/familia/notificacoes" element={<NotificacoesFamilia />} />
           <Route path="/dashboard/cuidador" element={<DashboardCuidador />} />
           <Route path="/buscar-cuidador" element={<BuscarCuidador />} />
           <Route path="/perfil-cuidador/editar" element={<PerfilCuidadorEditar />} />
