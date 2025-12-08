@@ -19,6 +19,7 @@ import NotificacoesFamilia from "./pages/ConfNotificacaoFamilia";
 import Agendamentos from "./pages/Agendamentos";
 import NovoIdoso from "./pages/NovoIdoso";
 import EditarIdoso from "./pages/EditarIdoso";
+import EsqueciSenha from "./pages/EsqueciSenha";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/esqueci-senha" element={<EsqueciSenha />} />
           <Route path="/dashboard/familia" element={<DashboardFamilia />} />
           <Route path="/agendamentos" element={<Agendamentos />} />
           <Route path="/perfil-familia" element={<PerfilFamilia />} />
