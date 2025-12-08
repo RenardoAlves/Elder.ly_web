@@ -163,18 +163,22 @@ const DashboardCuidador = () => {
                 <DropdownMenuContent align="end" className="w-56">
                   <DropdownMenuLabel>Configurações</DropdownMenuLabel>
                   <DropdownMenuSeparator />
+                  <Link to="/perfil-cuidador/editar" relative="route">
                   <DropdownMenuItem className="cursor-pointer gap-2">
                     <UserCircle className="h-4 w-4" />
-                    Meu Perfil
+                    Editar perfil
                   </DropdownMenuItem>
+                  </Link>
                   <DropdownMenuItem className="cursor-pointer gap-2">
                     <CreditCard className="h-4 w-4" />
-                    Pagamentos
+                    Faturamento
                   </DropdownMenuItem>
+                  <Link to="/notificacoes-cuidador" relative="route">
                   <DropdownMenuItem className="cursor-pointer gap-2">
                     <Bell className="h-4 w-4" />
                     Preferências de Notificação
                   </DropdownMenuItem>
+                  </Link>
                   <DropdownMenuItem className="cursor-pointer gap-2">
                     <Moon className="h-4 w-4" />
                     Tema Escuro

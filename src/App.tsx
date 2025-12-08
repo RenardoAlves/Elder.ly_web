@@ -23,6 +23,7 @@ import Agendamentos from "./pages/Agendamentos";
 import NovoIdoso from "./pages/NovoIdoso";
 import EditarIdoso from "./pages/EditarIdoso";
 import EsqueciSenha from "./pages/EsqueciSenha";
+import NotificacoesCuidador from "./pages/ConfNotificacaoCuidador";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/perfil-familia" element={<PerfilFamilia />} />
           <Route path="/pagamentos" element={<Pagamentos />} />
           <Route path="/notificacoes-familia" element={<NotificacoesFamilia />} />
+          <Route path="/notificacoes-cuidador" element={<NotificacoesCuidador />} />
           <Route path="/dashboard/cuidador" element={<DashboardCuidador />} />
           <Route path="/buscar-cuidador" element={<BuscarCuidador />} />
           <Route path="/perfil-cuidador/editar" element={<PerfilCuidadorEditar />} />
