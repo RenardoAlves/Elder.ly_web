@@ -17,6 +17,8 @@ import PerfilFamilia from "./pages/PerfilFamilia";
 import Pagamentos from "./pages/Pagamentos";
 import NotificacoesFamilia from "./pages/ConfNotificacaoFamilia";
 import Agendamentos from "./pages/Agendamentos";
+import NovoIdoso from "./pages/NovoIdoso";
+import EditarIdoso from "./pages/EditarIdoso";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +41,8 @@ const App = () => (
           <Route path="/perfil-cuidador/ver" element={<PerfilCuidadorVisualizar />} />
           <Route path="/historico" element={<Historico />} />
           <Route path="/meus-idosos" element={<MeusIdosos />} />
+          <Route path="/editar-idoso" element={<EditarIdoso />} />
+          <Route path="/novo-idoso" element={<NovoIdoso />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
