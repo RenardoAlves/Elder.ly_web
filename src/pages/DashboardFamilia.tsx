@@ -71,19 +71,19 @@ const DashboardFamilia = () => {
                 <DropdownMenuContent align="end" className="w-56">
                   <DropdownMenuLabel>Configurações</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <Link to="/perfil">
+                  <Link to="/familia/perfil">
                     <DropdownMenuItem className="cursor-pointer gap-2">
                       <UserCircle className="h-4 w-4" />
                       Meu Perfil
                     </DropdownMenuItem>
                   </Link>
-                  <Link to="/pagamentos">
+                  <Link to="/familia/pagamentos">
                     <DropdownMenuItem className="cursor-pointer gap-2">
                       <CreditCard className="h-4 w-4" />
                       Pagamentos
                     </DropdownMenuItem>
                   </Link>
-                  <Link to="/notificacoes">
+                  <Link to="/familia/notificacoes">
                     <DropdownMenuItem className="cursor-pointer gap-2">
                       <Bell className="h-4 w-4" />
                       Preferências de Notificação
