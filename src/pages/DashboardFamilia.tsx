@@ -156,7 +156,7 @@ const DashboardFamilia = () => {
           </Card>
         </Link>
 
-        <Link to="/agendamentos" className="block">
+        <Link to="/familia/agendamentos" className="block">
           <Card className="hover:shadow-elevated transition-shadow cursor-pointer h-full">
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center gap-2">
