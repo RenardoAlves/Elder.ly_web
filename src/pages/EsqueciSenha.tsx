@@ -44,7 +44,7 @@ const EsqueciSenha = () => {
                 Elder.ly+
               </span>
             </Link>
-            <Link to="/">
+            <Link to="/login">
               <Button variant="ghost" size="sm">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Voltar
